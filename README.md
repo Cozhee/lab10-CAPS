@@ -25,9 +25,9 @@ N/A
 #### Features / Routes
 
 `eventPool.on('VENDOR PICKUP')`<br>
-`eventPool.on('DELIVERY NEEDED')`
-`eventPool.on('DRIVER PICKUP')`
-`eventPool.on('DELIVERED')`
+`eventPool.on('DELIVERY NEEDED')`<br>
+`eventPool.on('DRIVER PICKUP')`<br>
+`eventPool.on('DELIVERED')`<br>
 `eventPool.on('NOTIFY VENDOR')`
 
 

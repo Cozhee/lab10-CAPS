@@ -1,0 +1,24 @@
+{
+  "name": "lab10-caps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "eventPool.js",
+  "scripts": {
+    "test": "jest --verbose --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cozhee/lab10-CAPS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cozhee/lab10-CAPS/issues"
+  },
+  "homepage": "https://github.com/Cozhee/lab10-CAPS#readme",
+  "dependencies": {
+    "chance": "^1.1.8",
+    "jest": "^28.1.1"
+  }
+}

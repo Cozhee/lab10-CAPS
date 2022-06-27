@@ -23,13 +23,13 @@ no env variables required
 N/A
 
 #### Features / Routes
-`
-eventPool.on('VENDOR PICKUP')</br>
-eventPool.on('DELIVERY NEEDED')
-eventPool.on('DRIVER PICKUP')
-eventPool.on('DELIVERED')
-eventPool.on('NOTIFY VENDOR')
-`
+
+`eventPool.on('VENDOR PICKUP')`
+`eventPool.on('DELIVERY NEEDED')`
+`eventPool.on('DRIVER PICKUP')`
+`eventPool.on('DELIVERED')`
+`eventPool.on('NOTIFY VENDOR')`
+
 
 ## UML
 ![Screen Shot 2022-06-27 at 4 43 35 PM](https://user-images.githubusercontent.com/55909913/176057012-73b0d3c2-f2fd-4140-bb59-302f7dc66ba7.png)

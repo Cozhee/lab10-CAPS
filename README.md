@@ -24,11 +24,11 @@ N/A
 
 #### Features / Routes
 
-`eventPool.on('VENDOR PICKUP')`<br>
-`eventPool.on('DELIVERY NEEDED')`<br>
-`eventPool.on('DRIVER PICKUP')`<br>
-`eventPool.on('DELIVERED')`<br>
-`eventPool.on('NOTIFY VENDOR')`
+`socket.on('PICK-UP')`<br>
+`socket.on('DELIVERY-NEEDED')`<br>
+`socket.on('PICKED-UP')`<br>
+`socket.on('DELIVERED')`<br>
+`socket.on('ORDER COMPLETE')`
 
 
 ## UML

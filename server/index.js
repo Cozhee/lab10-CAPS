@@ -1,18 +1,30 @@
 'use strict'
 
 const { Server } = require('socket.io')
+const Queue = require('./lib/queue')
 
 const PORT = process.env.PORT || 3001;
-
 const server = new Server(PORT);
-
 const caps = server.of('/caps')
+
+const messageQueue = new Queue()
+
 
 caps.on('connection', (socket) => {
     console.log('Socket connected to event server: ', socket.id)
 
+    socket.onAny((event, payload) => {
+        let time = new Date();
+        console.log('EVENT:', {event, time, payload});
+    })
 
     socket.on('PICK-UP', (payload) => {
+        let currentQueue = messageQueue.read(payload.queueId);
+        if (!currentQueue){
+            let queueKey = messageQueue.store(payload.queueId, new Queue());
+            currentQueue = messageQueue.read(queueKey)
+        }
+        currentQueue.store(payload.driverId, payload);
         console.log('VENDOR needs pickup for', payload.orderID)
         socket.broadcast.emit('PICK-UP', payload)
         logEvent('PICK-UP', payload)
@@ -31,6 +43,11 @@ caps.on('connection', (socket) => {
     })
 
     socket.on('DELIVERED', (payload) => {
+        let currentQueue = messageQueue.read(payload.queueId);
+        if(!currentQueue){
+            throw new Error('no queue created for this message');
+        }
+        let message = currentQueue.remove(payload.driverId);
         console.log('DRIVER: delivered package', payload.orderID)
         socket.broadcast.emit('DELIVERED', payload)
         logEvent('DELIVERED', payload)
